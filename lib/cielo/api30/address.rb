@@ -9,12 +9,14 @@ module Cielo
     # @attr [String] city the city of customer's address
     # @attr [String] state the state of customer's address
     # @attr [String] country the country of customer's address
+    # @attr [String] district the district of customer's address
     class Address
       attr_accessor :street,
                     :number,
                     :complement,
                     :zip_code,
                     :city,
+                    :district,
                     :state,
                     :country
 
@@ -33,6 +35,7 @@ module Cielo
         address.complement = data["Complement"]
         address.zip_code = data["ZipCode"]
         address.city = data["City"]
+        address.district = data["District"]
         address.state = data["State"]
         address.country = data["Country"]
         address
@@ -45,6 +48,7 @@ module Cielo
           Complement: @complement,
           ZipCode: @zip_code,
           City: @city,
+          District: @district,
           State: @state,
           Country: @country
         }
