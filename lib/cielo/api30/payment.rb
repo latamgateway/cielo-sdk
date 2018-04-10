@@ -10,6 +10,7 @@ module Cielo
       PAYMENTTYPE_BOLETO = "Boleto"
 
       PROVIDER_BRADESCO = "Bradesco"
+      PROVIDER_BRADESCO_REGISTERED = "Bradesco2"
       PROVIDER_BANCO_DO_BRASIL = "BancoDoBrasil"
       PROVIDER_SIMULADO = "Simulado"
 
