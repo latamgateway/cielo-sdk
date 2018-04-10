@@ -138,6 +138,7 @@ module Cielo
           Identification: @identification,
           Assignor: @assignor,
           Instructions: @instructions,
+          ExpirationDate: @expiration_date,
           BarCodeNumber: @bar_code_number,
           DigitableLine: @digitable_line,
           Address: @address,
