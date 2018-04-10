@@ -45,6 +45,9 @@ module Cielo
                     :url,
                     :number,
                     :boleto_number,
+                    :assignor,
+                    :identification,
+                    :instructions,
                     :bar_code_number,
                     :digitable_line,
                     :address,
@@ -98,6 +101,9 @@ module Cielo
         payment.url = data["Url"]
         payment.number = data["Number"]
         payment.boleto_number = data["BoletoNumber"]
+        payment.assignor = data["Assignor"]
+        payment.instructions = data["Instructions"]
+        payment.identification = data["Identification"]
         payment.bar_code_number = data["BarCodeNumber"]
         payment.digitable_line = data["DigitableLine"]
         payment.address = data["Address"]
@@ -129,6 +135,9 @@ module Cielo
           Country: @country,
           Number: @number,
           BoletoNumber: @boleto_number,
+          Identification: @identification,
+          Assignor: @assignor,
+          Instructions: @instructions,
           BarCodeNumber: @bar_code_number,
           DigitableLine: @digitable_line,
           Address: @address,
