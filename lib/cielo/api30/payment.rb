@@ -44,6 +44,7 @@ module Cielo
                     :expiration_date,
                     :url,
                     :number,
+                    :boleto_number,
                     :bar_code_number,
                     :digitable_line,
                     :address,
@@ -96,6 +97,7 @@ module Cielo
         payment.expiration_date = data["ExpirationDate"]
         payment.url = data["Url"]
         payment.number = data["Number"]
+        payment.boleto_number = data["BoletoNumber"]
         payment.bar_code_number = data["BarCodeNumber"]
         payment.digitable_line = data["DigitableLine"]
         payment.address = data["Address"]
@@ -126,6 +128,7 @@ module Cielo
           Currency: @currency,
           Country: @country,
           Number: @number,
+          BoletoNumber: @boleto_number,
           BarCodeNumber: @bar_code_number,
           DigitableLine: @digitable_line,
           Address: @address,
