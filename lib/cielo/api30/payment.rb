@@ -17,6 +17,7 @@ module Cielo
       attr_accessor :service_tax_amount,
                     :installments,
                     :interest,
+                    :demonstrative,
                     :capture,
                     :authenticate,
                     :recurrent,
@@ -72,6 +73,7 @@ module Cielo
         payment.service_tax_amount = data["ServiceTaxAmount"]
         payment.installments = data["Installments"]
         payment.interest = data["Interest"]
+        payment.demonstrative = data["Demonstrative"]
         payment.capture = data["Capture"]
         payment.authenticate = data["Authenticate"]
         payment.recurrent = data["Recurrent"]
@@ -121,6 +123,7 @@ module Cielo
           ServiceTaxAmount: @service_tax_amount,
           Installments: @installments,
           Interest: @interest,
+          Demonstrative: @demonstrative,
           Capture: @capture,
           Authenticate: @authenticate,
           Recurrent: @recurrent,
