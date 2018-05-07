@@ -34,6 +34,14 @@ module Cielo
         Cielo::API30::Request::QuerySaleRequest.new(merchant, environment).execute(payment_id)
       end
 
+      # Query the Brand on Cielo by CardBin
+      #
+      # @param card_bin [String] The 6 first card number
+      # @return [Brand] The brand, returned by Cielo.
+      def get_brand(card_bin)
+        Cielo::API30::Request::QueryBrandRequest.new(merchant, environment).execute(card_bin)
+      end
+
       # Cancel a Payment on Cielo by paymentId and speficying the amount
       #
       # @param payment_id [String] The payment_id to be queried

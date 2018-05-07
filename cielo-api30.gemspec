@@ -24,11 +24,13 @@ Gem::Specification.new do |spec|
                 "lib/cielo/api30/payment.rb",
                 "lib/cielo/api30/recurrent_payment.rb",
                 "lib/cielo/api30/sale.rb",
+                "lib/cielo/api30/brand.rb",
                 "lib/cielo/api30/version.rb",
                 "lib/cielo/api30/request/cielo_request.rb",
                 "lib/cielo/api30/request/cielo_error.rb",
                 "lib/cielo/api30/request/create_sale_request.rb",
                 "lib/cielo/api30/request/query_sale_request.rb",
+                "lib/cielo/api30/request/query_brand_request.rb",
                 "lib/cielo/api30/request/update_sale_request.rb"]
 
   spec.add_dependency "bundler", "~> 1.6"

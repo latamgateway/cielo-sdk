@@ -8,9 +8,11 @@ require "cielo/api30/customer"
 require "cielo/api30/payment"
 require "cielo/api30/recurrent_payment"
 require "cielo/api30/sale"
+require "cielo/api30/brand"
 
 require "cielo/api30/request/create_sale_request"
 require "cielo/api30/request/query_sale_request"
+require "cielo/api30/request/query_brand_request"
 require "cielo/api30/request/update_sale_request"
 
 module Cielo
