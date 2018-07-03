@@ -33,7 +33,7 @@ module Cielo
           client = Net::HTTP.new(uri.host, uri.port)
           client.use_ssl = true
 
-          response = client.send_request(method, uri.path, body, headers)
+          response = client.send_request(method, uri.request_uri, body, headers)
 
           data = JSON.parse(response.body)
 

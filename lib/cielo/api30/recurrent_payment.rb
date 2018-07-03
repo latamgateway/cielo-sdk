@@ -10,7 +10,10 @@ module Cielo
       attr_accessor :authorize_now,
                     :start_date,
                     :end_date,
-                    :interval
+                    :interval,
+                    :recurrent_payment,
+                    :next_recurrency,
+                    :link
 
       def initialize(authorize_now=true)
         @authorize_now = authorize_now
@@ -29,6 +32,9 @@ module Cielo
         recurrent_payment.start_date =data["StartDate"]
         recurrent_payment.end_date =data["EndDate"]
         recurrent_payment.interval =data["Interval"]
+        recurrent_payment.recurrent_payment_id =data["RecurrentPaymentId"]
+        recurrent_payment.next_recurrency =data["NextRecurrency"]
+        recurrent_payment.link =data["Link"]
         recurrent_payment
       end
 
