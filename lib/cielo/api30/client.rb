@@ -42,6 +42,20 @@ module Cielo
         Cielo::API30::Request::QueryBrandRequest.new(merchant, environment).execute(card_bin)
       end
 
+      # Save Card and Return Token
+      # @param credit_card [CreditCard] The object CreditCard
+      # @return [String] The card Token, returned by Cielo.
+      def save_card(credit_card)
+        Cielo::API30::Request::SaveCardRequest.new(merchant, environment).execute(credit_card)
+      end
+
+      # Get Saved card info
+      # @param token [String] The generated token by Cielo
+      # @return [Card] The Credit Card, returned By Cielo.
+      def card_info(token)
+        Cielo::API30::Request::QueryCardRequest.new(merchant, environment).execute(token)
+      end
+
       # Cancel a Payment on Cielo by paymentId and speficying the amount
       #
       # @param payment_id [String] The payment_id to be queried
