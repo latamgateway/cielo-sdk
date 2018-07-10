@@ -7,7 +7,7 @@ module Cielo
         def initialize(code, body)
           @code = code
           @body = body
-          super("Error [#{code}] #{body}")
+          super("Error: #{body}")
         end
       end
     end
