@@ -40,8 +40,9 @@ module Cielo
           Rails.logger.warn "CIELO: #{response.body}"
           Rails.logger.warn "Cielo un: #{response.is_a?(Net::HTTPUnauthorized)}"
           Rails.logger.warn "Cielo suc: #{response.is_a?(Net::HTTPSuccess)}"
-          
+
           data = JSON.parse(response.body)
+          Rails.logger.warn "Cielo DATA: #{data}"
 
           raise CieloError.new(data.first["Code"], data.first["Message"]) if response.code.to_i >= 400
 
