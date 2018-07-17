@@ -34,16 +34,9 @@ module Cielo
           client.use_ssl = true
 
           response = client.send_request(method, uri.request_uri, body, headers)
-          Rails.logger.warn "CIELO: #{response}"
-          Rails.logger.warn "CIELO: #{response.code}"
-          Rails.logger.warn "CIELO: #{response.class.name}"
-          Rails.logger.warn "CIELO: #{response.body}"
-          Rails.logger.warn "Cielo un: #{response.is_a?(Net::HTTPUnauthorized)}"
-          Rails.logger.warn "Cielo suc: #{response.is_a?(Net::HTTPSuccess)}"
+          raise CieloError.new(401, 'Unauthorized') if response.is_a? Net::HTTPUnauthorized
 
           data = JSON.parse(response.body)
-          Rails.logger.warn "Cielo DATA: #{data}"
-
           raise CieloError.new(data.first["Code"], data.first["Message"]) if response.code.to_i >= 400
 
           data
