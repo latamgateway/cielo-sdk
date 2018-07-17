@@ -35,7 +35,11 @@ module Cielo
 
           response = client.send_request(method, uri.request_uri, body, headers)
           Rails.logger.warn "CIELO: #{response}"
+          Rails.logger.warn "CIELO: #{response.code}"
+          Rails.logger.warn "CIELO: #{response.class.name}"
           Rails.logger.warn "CIELO: #{response.body}"
+          Rails.logger.warn "Cielo un: #{response.is_a?(Net::HTTPUnauthorized)}"
+          Rails.logger.warn "Cielo suc: #{response.is_a?(Net::HTTPSuccess)}"
           
           data = JSON.parse(response.body)
 
