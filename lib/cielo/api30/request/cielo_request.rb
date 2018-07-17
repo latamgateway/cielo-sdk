@@ -34,7 +34,9 @@ module Cielo
           client.use_ssl = true
 
           response = client.send_request(method, uri.request_uri, body, headers)
-
+          Rails.logger.warn "CIELO: #{response}"
+          Rails.logger.warn "CIELO: #{response.body}"
+          
           data = JSON.parse(response.body)
 
           raise CieloError.new(data.first["Code"], data.first["Message"]) if response.code.to_i >= 400
