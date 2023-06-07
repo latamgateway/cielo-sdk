@@ -52,7 +52,8 @@ module Cielo
                     :bar_code_number,
                     :digitable_line,
                     :address,
-                    :return_info
+                    :return_info,
+                    :external_authentication
 
       def initialize(amount, installments: 1)
         @amount = amount
@@ -110,6 +111,7 @@ module Cielo
         payment.digitable_line = data["DigitableLine"]
         payment.address = data["Address"]
         payment.return_info = ReturnInfo.new(payment.return_code)
+        payment.external_authentication = ExternalAuthentication.from_json(data["ExternalAuthentication"])
 
         payment
       end
@@ -145,7 +147,8 @@ module Cielo
           BarCodeNumber: @bar_code_number,
           DigitableLine: @digitable_line,
           Address: @address,
-          ReturnInfo: @return_info
+          ReturnInfo: @return_info,
+          ExternalAuthentication: @external_authentication
         }
       end
     end
