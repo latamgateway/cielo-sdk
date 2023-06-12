@@ -34,7 +34,7 @@ module Cielo
         external_authentication
       end
 
-      def as_json(options={})
+      def as_json(_options={})
         {
           Cavv: @cavv,
           Xid: @xid,
