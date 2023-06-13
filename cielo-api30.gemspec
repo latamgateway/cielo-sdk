@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
                 "lib/cielo/api30/payment.rb",
                 "lib/cielo/api30/recurrent_payment.rb",
                 "lib/cielo/api30/sale.rb",
+                "lib/cielo/api30/external_authentication.rb",
                 "lib/cielo/api30/brand.rb",
                 "lib/cielo/api30/version.rb",
                 "lib/cielo/api30/request/cielo_request.rb",
